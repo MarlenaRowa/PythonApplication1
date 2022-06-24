@@ -19,9 +19,6 @@ ENTITY = """{
     }
 }"""
 
-response = requests.get(f"{OCB}/entities")
-print(response)
-
 req = requests.post(f"{OCB}/entities", ENTITY, headers=headers)
 print(req.headers)
 print(req.content)
