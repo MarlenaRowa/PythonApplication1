@@ -9,9 +9,9 @@ from datetime import datetime
 import json
 app = Flask(__name__)
 dt = datetime.now()
-jsona = "Dziadek"
-jsonb = "Dziadek"
-jsonc = "Dziadek"
+jsona = "Sub1"
+jsonb = "Sub2"
+jsonc = "Sub3"
 
 @app.route("/notification/VersionReq", methods=['GET', 'POST'])
 def Sub1():
@@ -33,7 +33,7 @@ def Sub2():
     print(json.dumps(request.json, indent=4))
 
     global jsonb
-    jsona = json.dumps(request.json)
+    jsonb = json.dumps(request.json)
 
     return ""
 
@@ -45,20 +45,20 @@ def Sub3():
     print(json.dumps(request.json, indent=4))
 
     global jsonc
-    jsona = json.dumps(request.json)
+    jsonc = json.dumps(request.json)
 
     return ""
 
-@app.route("/test")
+@app.route("/Subscription1")
 def wannacry():
     return jsona
     
-@app.route("/test2")
+@app.route("/Subscription2")
 def wannacry2():
     return jsonb
     
         
-@app.route("/test2")
+@app.route("/Subscription3")
 def wannacry3():
     return jsonc
     
